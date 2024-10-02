@@ -4,6 +4,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import logger from '../services/logger';
 import { config as configDotenv } from 'dotenv';
+import { DropdownHandler } from '../services/dropdown';
+import { DROPDOWN_OPTIONS } from '../constants/dropdown';
 
 // Load environment variables from .env file
 configDotenv();
@@ -16,6 +18,7 @@ configDotenv();
 export class CustomClient extends Client {
   public commands: Collection<string, Command>;
   public rest: REST;
+  public dropdownHandler: DropdownHandler | null | undefined;
 
   /**
    * Absolute paths to the commands and events directories.
@@ -50,6 +53,7 @@ export class CustomClient extends Client {
       this.loadCommands();
       this.loadEvents();
       this.registerCommands();
+      this.dropdownHandler = new DropdownHandler(this, DROPDOWN_OPTIONS);
     });
   }
 

@@ -5,3 +5,14 @@ export type Command = {
   execute: (interaction: Interaction) => void;
   name: string;
 };
+
+export type DropdownOption = {
+  emoji: string;
+  label: string;
+  value: string;
+};
+
+export type Dropdown = {
+  placeholder: string;
+  options: DropdownOption[];
+};
