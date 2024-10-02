@@ -63,3 +63,14 @@ export const DROPDOWN_OPTIONS = [
     value: string;
   }[];
 }[];
+
+/*
+Change the dropdown to a file structure to auto load the dropdowns
+
+dropdown/
+	[dropdownGroup]/[dropdown_name]/index.ts
+	[dropdownGroup]/[dropdown_name]/[option_name].ts
+	[dropdownGroup]/[dropdown_name]/[option_name].ts
+
+	//https://chatgpt.com/c/66fd1f40-5d00-800d-9ab6-4e6a6d323c66 chat gpt generated me a boilerplate for this. 
+ */
